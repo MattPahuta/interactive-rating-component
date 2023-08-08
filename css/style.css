@@ -1,0 +1,153 @@
+/*
+Author: Matt Pahuta
+https://www.mattpahuta.com
+Date: August 8, 2023 (begin dev)
+*/
+
+/* **************** */
+/* Custom Variables */
+/* **************** */
+:root {
+  
+  /* FONTS */
+  --ff-primary: 'Overpass', sans-serif;;
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  /* FONT SIZES */
+  --fs-400: 0.875rem;
+  --fs-700: 1.5rem;
+
+
+  /*** COLORS ***/
+  /* primary colors */
+  --clr-orange: hsl(25, 97%, 53%);
+  /* neutral colors */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(217, 12%, 63%);
+  --clr-med-gray: hsl(216, 12%, 54%);
+  --clr-dark-blue: hsl(213, 19%, 18%);
+  --clr-extra-dark-blue: hsl(216, 12%, 8%);
+  /* gradients */
+  --clr-gradient-black: radial-gradient(98.96% 98.96% at 50.00% 0%, #232A34 0%, #181E27 100%);
+
+  /* BORDER RADIUS */
+  --br-soft: 0.9375rem;
+  --br-round: 50%;
+  
+}
+
+@media (min-width: 600px) {
+  :root {
+    --fs-400: 0.9375rem;
+    --fs-700: 1.75rem;  
+    
+    --br-soft: 1.875rem;
+  }
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-primary);
+  line-height: 1.5;
+  background-color: var(--clr-extra-dark-blue);
+  color: var(--clr-light-gray);
+}
+
+form {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+/* Components and Utility Classes */
+.stacked {
+  /* display grid on the parent */
+  display: grid;
+  /* center everything */
+  place-items: center; 
+}
+
+.stacked > * {
+  /* make all the children share the same cell */
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.rating-card {
+  max-width: 20.4375rem;
+  padding: 2rem;
+  background: var(--clr-gradient-black);
+  border-radius: var(--br-soft);
+}
+
+
+
+
+.rating-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-legend {
+  font-size: var(--fs-400);
+}
+
+.rating-input {
+  height: 42px;
+  width: 42px;
+}
+
+
+.submit-btn {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .rating-card {
+    max-width: 25.75rem;
+  }
+}
