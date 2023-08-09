@@ -21,54 +21,51 @@
   <!-- Rating state start -->
   <main>
     <div class="rating-card">
-      <img src="./images/icon-star.svg" alt="">
+      <div class="icon-container">
+        <img class="rating-icon" src="./images/icon-star.svg" alt="">
+      </div>
       <h1>How did we do?</h1>
       <form action="">
         <fieldset class="rating-fieldset">
           <legend class="rating-legend">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
           </legend>
-          <label class="form-control stacked">
-            <input type="radio" name="rating" value="1" class="rating-input">
-            <span>1</span>
-          </label>
-          <label class="form-control stacked">
-            <input type="radio" name="rating" value="2" class="rating-input">
-            <span>2</span>
-          </label>
-          <label class="form-control stacked">
-            <input type="radio" name="rating" value="3" class="rating-input">
-            <span>3</span>
-          </label>
-          <label class="form-control stacked">
-            <input type="radio" name="rating" value="4" class="rating-input">
-            <span>4</span>
-          </label>
-          <label class="form-control stacked">
-            <input type="radio" name="rating" value="5" class="rating-input">
-            <span>5</span>
-          </label>
+          <div class="selector-container">
+            <div class="selector-item stacked">
+              <input type="radio" id="radio1" name="rating-selector" value="1" class="selector-item_radio">
+              <label for="radio1" class="selector-item_label">1</label>
+            </div>
+            <div class="selector-item stacked">
+              <input type="radio" id="radio2" name="rating-selector" value="2" class="selector-item_radio">
+              <label for="radio2" class="selector-item_label">2</label>
+            </div>
+            <div class="selector-item stacked">
+              <input type="radio" id="radio3" name="rating-selector" value="3" class="selector-item_radio">
+              <label for="radio3" class="selector-item_label">3</label>
+            </div>
+            <div class="selector-item stacked">
+              <input type="radio" id="radio4" name="rating-selector" value="4" class="selector-item_radio">
+              <label for="radio4" class="selector-item_label">4</label>
+            </div>
+            <div class="selector-item stacked">
+              <input type="radio" id="radio5" name="rating-selector" value="5" class="selector-item_radio">
+              <label for="radio5" class="selector-item_label">5</label>
+            </div>
+          </div>
         </fieldset>
 
-        <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="button submit-btn">Submit</button>
       </form>
     </div>
   </main>
-  
-
-
-  1 2 3 4 5
-
   <!-- Rating state end -->
 
   <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
+  <!-- You selected *** out of 5
 
   Thank you!
 
   We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
+  don’t hesitate to get in touch! -->
   <!-- Thank you state end -->
 
   
