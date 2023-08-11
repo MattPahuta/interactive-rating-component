@@ -8,7 +8,6 @@ Date: August 8, 2023 (begin dev)
 /* Custom Variables */
 /* **************** */
 :root {
-  
   /* FONTS */
   --ff-primary: 'Overpass', sans-serif;;
   /* Font Weights */
@@ -17,31 +16,27 @@ Date: August 8, 2023 (begin dev)
   /* FONT SIZES */
   --fs-400: 0.875rem;
   --fs-700: 1.5rem;
-
-
   /*** COLORS ***/
   /* primary colors */
   --clr-orange: hsl(25, 97%, 53%);
   /* neutral colors */
   --clr-white: hsl(0, 0%, 100%);
+  --clr-ghost-white: hsl(240, 22%, 96%);
   --clr-light-gray: hsl(217, 12%, 63%);
   --clr-med-gray: hsl(216, 12%, 54%);
   --clr-dark-blue: hsl(213, 19%, 18%);
   --clr-extra-dark-blue: hsl(216, 12%, 8%);
   /* gradients */
   --clr-gradient-black: radial-gradient(98.96% 98.96% at 50.00% 0%, #232A34 0%, #181E27 100%);
-
   /* BORDER RADIUS */
   --br-soft: 0.9375rem;
   --br-round: 50%;
-  
 }
 
 @media (min-width: 600px) {
   :root {
     --fs-400: 0.9375rem;
     --fs-700: 1.75rem;  
-    
     --br-soft: 1.875rem;
   }
 }
@@ -96,6 +91,9 @@ body {
 }
 
 /* Components and Utility Classes */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
 .stacked {
   display: grid;
   place-items: center; 
@@ -108,36 +106,38 @@ body {
 
 button.button {
   width: 100%;
-
   border: none;
   background-color: transparent;
   padding: 0.75rem 6.75rem;
   cursor: pointer;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   background-color: var(--clr-orange);
   color: var(--clr-white);
   border-radius: 1.4rem;
-
   font-size: var(--fs-400);
   font-weight: var(--fw-bold);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
 }
 
 button.button:hover {
   background-color: var(--clr-white);
   color: var(--clr-orange);
-  transition: all 0.25s ease-in-out;
 }
 
 @media screen and (-ms-high-contrast: active) {
   button.button {
     border: 2px solid currentColor;
   }
+}
+/* hover and focus */
+button.button:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px var(--clr-ghost-white);
 }
 
 /* Card Styles */
@@ -215,14 +215,14 @@ button.button:hover {
 input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
-
   background-color: var(--clr-dark-blue);
   margin: 0;
   color: currentColor;
   border-radius: var(--br-round);
-
   height: 2.625rem;
   width: 2.625rem;
+
+  transition: all 0.25s ease-in-out;
 }
 
 .selector-item {
@@ -233,11 +233,10 @@ input[type="radio"] {
   color: var(--clr-white);
 }
 
-.selector-item_radio:hover {
+input[type="radio"]:hover {
   cursor: pointer;
   background-color: var(--clr-orange);
   color: var(--clr-white);
-  transition: all 0.25s ease-in-out;
 }
 
 .selector-item_label {
@@ -248,35 +247,41 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.selector-item_radio:checked {
+input[type="radio"]:checked {
   background-color: var(--clr-med-gray);
 }
 
+input[type="radio"]:checked + label {
+  color: white;
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid var(--clr-orange);
+  outline-offset: max(2px, 0.15em);
+}
 
 @media (min-width: 600px) {
-
   .rating-card {
     padding: 2rem;
     max-width: 25.75rem;
   }
-
   .icon-container {
     margin-bottom: 1.85rem;
     width: 3rem;
     height: 3rem;
   }
-
   .selector-container{
     margin-bottom: 2rem;
   }
-
   .selector-item {
     font-size: 1rem;
   }
-
   input[type="radio"] {
     height: 3.1875rem;
     width: 3.1875rem;
   }
-  
 }
+
+
+
+
