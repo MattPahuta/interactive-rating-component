@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://interactive-rating-component-zeta-rose.vercel.app/)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/interactive-rating-component-using-css-grid-and-javascript-APQtGNXdeC)
+- [Live Site URL](https://interactive-rating-component-zeta-rose.vercel.app/)
 
 ## My process
 
@@ -68,7 +68,7 @@ I picked this useful bit of code up from Kevin Powell's excellent YouTube conten
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Matt Pahuta](https://www.mattpahuta.com)
+- Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
+- Twitter - [@mattpahuta](https://www.twitter.com/MattPahuta)
 
