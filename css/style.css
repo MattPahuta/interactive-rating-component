@@ -1,6 +1,5 @@
 /*
 Author: Matt Pahuta
-https://www.mattpahuta.com
 Date: August 8, 2023 (begin dev)
 */
 
@@ -107,12 +106,10 @@ button.button {
   width: 100%;
   border: none;
   background-color: transparent;
-
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   color: var(--clr-white);
   border-radius: 1.4rem;
   font-size: var(--fs-400);
@@ -167,7 +164,7 @@ dialog {
   font-size: var(--fs-400);
   font-weight: var(--fw-bold);
   color: var(--clr-white);
-  background-color: var(--clr-orange);
+  background-color: hsl(25, 97%, 53%, 0.9);
   border: none;
   border-radius: var(--br-soft);
 }
