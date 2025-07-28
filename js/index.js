@@ -1,11 +1,9 @@
 const ratingForm = document.getElementById('rating-form');
-const dialog = document.querySelector('dialog');
 
 // init function on page load
 function initializePage() {
   ratingForm.reset();
   ratingForm.addEventListener('submit', onRatingSubmit);
-  dialog.addEventListener('click', closeDialog);
 }
 
 initializePage();
@@ -16,30 +14,11 @@ function onRatingSubmit(e) {
 
   try {
     const rating = document.querySelector("input[type='radio'][name=rating-selector]:checked").value;
-    console.log(rating);
     render(rating)
   } catch(error) {
     console.error(error);
-    dialog.showModal();
+    window.alert('please select a rating')
   }
-}
-
-// close dialog box
-function closeDialog(e) {
-  if (e.target.id === 'close-dialog') {
-    dialog.close();
-  }
-
-  const dialogDimensions = dialog.getBoundingClientRect()
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    dialog.close()
-  }  
-
 }
 
 // render confirmation html of rating selected
