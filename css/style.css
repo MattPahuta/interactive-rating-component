@@ -25,6 +25,14 @@ Date: August 2023
     #232a34 0%,
     #181e27 100%
   );
+  /* Spacing */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-1300: 6.5rem; /* 104px */
+  --spacing-1700: 8.5rem; /* 136px */
   /* BORDER RADIUS */
   --br-soft: 0.9375rem;
   --br-round: 50%;
@@ -116,20 +124,22 @@ Date: August 2023
 }
 
 @layer layout {
+  .main {
+    padding-inline: var(--spacing-300);
+  }
   /* Card Styles */
   .rating-card,
   .result-card {
-    max-width: 20.4375rem;
+    max-width: 412px;
     background: var(--clr-gradient-black);
     border-radius: var(--br-soft);
   }
 
   .rating-card {
-    padding: 1.5rem;
+    padding: var(--spacing-300);
 
     @media (width > 37.5rem) {
-      padding: 2rem;
-      max-width: 25.75rem;
+      padding: var(--spacing-400);
     }
   }
 
@@ -139,7 +149,7 @@ Date: August 2023
   }
 
   .result-card img {
-    margin-bottom: 1.5rem;
+
     margin-inline: auto;
     max-width: 9rem;
   }
@@ -165,6 +175,10 @@ Date: August 2023
     border-radius: var(--br-round);
     display: grid;
     place-items: center;
+
+    .star-icon + * {
+      width: 14px;
+    }
 
     @media (width > 37.5rem) {
       margin-bottom: 1.85rem;
