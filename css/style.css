@@ -9,8 +9,15 @@ Date: August 2023
   --fw-regular: 400;
   --fw-bold: 700;
   /* FONT SIZES */
-  --fs-400: 0.875rem;
+  --fs-card-text: 0.875rem;
   --fs-700: 1.5rem;
+  --fs-card-heading: 1.5rem;
+
+  @media (width > 37.5rem) {
+    --fs-card-text: 0.938rem;
+    --fs-card-heading: 1.75rem;
+    --br-soft: 1.875rem;
+  }
   /* primary colors */
   --clr-orange-500: hsl(25, 97%, 53%);
   /* neutral colors */
@@ -30,20 +37,13 @@ Date: August 2023
   --spacing-200: 1rem; /* 16px */
   --spacing-300: 1.5rem; /* 24px */
   --spacing-400: 2rem; /* 32px */
+  --spacing-425: 2.25rem; /* 36px */
   --spacing-500: 2.5rem; /* 40px */
   --spacing-1300: 6.5rem; /* 104px */
   --spacing-1700: 8.5rem; /* 136px */
   /* BORDER RADIUS */
   --br-soft: 0.9375rem;
   --br-round: 50%;
-}
-
-@media (width > 37.5rem) {
-  :root {
-    --fs-400: 0.9375rem;
-    --fs-700: 1.75rem;
-    --br-soft: 1.875rem;
-  }
 }
 
 @layer reset {
@@ -116,8 +116,7 @@ Date: August 2023
     display: grid;
     place-items: center;
     font-family: var(--ff-primary);
-    font-size: var(--fs-400);
-    line-height: 1.5;
+    line-height: 1.6;
     background-color: var(--clr-grey-950);
     color: var(--clr-grey-500);
   }
@@ -127,45 +126,64 @@ Date: August 2023
   .main {
     padding-inline: var(--spacing-300);
   }
-  /* Card Styles */
-  .rating-card,
-  .result-card {
+
+  .card {
     max-width: 412px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-card-text);
     background: var(--clr-gradient-black);
     border-radius: var(--br-soft);
   }
 
+  .card h2 {
+    margin-block-end: var(--spacing-200);
+    font-size: var(--fs-card-heading);
+    line-height: 1.25;
+    color: var(--clr-white);
+  }
+
   .rating-card {
     padding: var(--spacing-300);
+    align-items: start;
 
     @media (width > 37.5rem) {
-      padding: var(--spacing-400);
+      padding-block: var(--spacing-400);
+      padding-inline: var(--spacing-300);
     }
   }
 
-  .result-card {
-    padding: 2.25rem 1.5rem;
+
+  /* Rating Confirmation */
+  .confirmation-card {
+    padding: var(--spacing-400) var(--spacing-300);
+    align-items: center;
     text-align: center;
   }
 
-  .result-card img {
-
-    margin-inline: auto;
-    max-width: 9rem;
+  .confirmation-card img {
+    max-width: 144px;
   }
 
-  .rating-summary {
-    margin-bottom: 1.5rem;
-    padding: 0.4em 0.9em;
+  p.rating-summary {
+    margin-block: var(--spacing-300);
+    padding: 0.65em 0.9em;
     display: inline-block;
     color: var(--clr-orange-500);
     background: var(--clr-grey-900);
-    border-radius: 1.40625rem;
+    line-height: 1;
+    border-radius: 22.5px;
   }
 
-  .result-card p {
-    max-width: 36ch;
+  .confirmation-card h2 {
+    margin-block-end: var(--spacing-200);
+    font-size: var(--fs-700);
   }
+
+  /* .confirmation-card p {
+    max-width: 36ch;
+  } */
 
   .icon-container {
     margin-bottom: 1.5rem;
@@ -176,22 +194,16 @@ Date: August 2023
     display: grid;
     place-items: center;
 
-    .star-icon + * {
-      width: 14px;
-    }
-
     @media (width > 37.5rem) {
       margin-bottom: 1.85rem;
       width: 3rem;
       height: 3rem;
-    }
-  }
 
-  .rating-card h1 {
-    color: var(--clr-white);
-    margin-bottom: 0.5em;
-    font-size: var(--fs-700);
-    line-height: 1.2;
+      svg {
+        width: 16.75px;
+        height: 16px;
+      }
+    }
   }
 
   .rating-fieldset {
@@ -201,10 +213,8 @@ Date: August 2023
   }
 
   .rating-legend {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-200);
     padding: 0;
-    font-size: var(--fs-400);
-    line-height: 1.6;
   }
 
   .selector-container {
@@ -229,7 +239,7 @@ Date: August 2023
     justify-content: center;
     color: var(--clr-white);
     border-radius: 1.4rem;
-    font-size: var(--fs-400);
+    font-size: var(--fs-card-text);
     font-weight: var(--fw-bold);
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -279,7 +289,7 @@ Date: August 2023
   .selector-item {
     border-radius: var(--br-round);
     transition: all 0.25s ease-in-out;
-    font-size: var(--fs-400);
+    font-size: var(--fs-card-text);
 
     @media (width > 37.5rem) {
       font-size: 1rem;
