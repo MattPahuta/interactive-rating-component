@@ -335,6 +335,15 @@ Date: August 2023
 }
 
 @layer utilities {
+  .visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
   .stacked {
     display: grid;
     place-items: center;
@@ -343,5 +352,14 @@ Date: August 2023
   .stacked > * {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
+  }
+
+  .fade {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .fade-out {
+    opacity: 0;
   }
 }

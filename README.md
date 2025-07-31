@@ -50,6 +50,14 @@ Users should be able to:
 
 I picked this useful bit of code up from Kevin Powell's excellent YouTube content. It's the first time I've used it in a project and was perfect for stacking my radio input/label pairs.
 
+July 2025 Updates
+Moving through the Frontend Mentor Accessibility learning path and this is the first project to complete before moving forward. I'd completed this small component project about 2 years prior, so this was a good time to revisit. 
+
+- Updated some of the styling to better match the comp
+- Complete revision of the JavaScript code
+- Use of the `template` element to dynamically render the two screens
+- This is a good use case for a simple React component, but since I'd originally completed with vanilla JS, I wanted to adapt it by tinking with the existing JS...
+
 ```css
 .stacked {
   display: grid;

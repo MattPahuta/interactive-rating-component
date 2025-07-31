@@ -1,23 +1,38 @@
-const form =document.getElementById("ratingForm");
 const cardContainer = document.getElementById("cardContainer");
+const ratingTemplate = document.getElementById("ratingTemplate");
 const confirmationTemplate = document.getElementById("confirmationTemplate");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+function showRatingCard() {
+  const ratingForm = ratingTemplate.content.cloneNode(true);
+  const form = ratingForm.querySelector("#ratingForm");
 
-  const formData = new FormData(form);
-  const rating = formData.get("rating");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    const formData = new FormData(form);
+    const rating = formData.get("rating");
+  
+    if (!rating) return;
 
-  // ToDo: Add error dialog ('Please select a rating'), another template element?
-  if (!rating) return;
+    form.classList.add("fade-out");
+    setTimeout(() => {
+      showConfirmation(rating);
+    }, 400);
+    
+    form.reset();
+    
+  });
+  
+  cardContainer.replaceChildren(ratingForm);
+}
 
-  // Use cloneNode method to clone and update confirmation card
+function showConfirmation(rating) {
   const ratingConfirmation = confirmationTemplate.content.cloneNode(true);
-  // Apply the user selected rating to the <span> element
   ratingConfirmation.querySelector("#selectedRating").textContent = rating; 
 
-  // Replace rating card with result card
   cardContainer.replaceChildren(ratingConfirmation);
-});
 
-form.reset();
+}
+
+showRatingCard();
+

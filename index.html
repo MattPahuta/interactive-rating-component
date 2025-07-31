@@ -11,7 +11,12 @@
       sizes="32x32"
       href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | Interactive rating component</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -24,97 +29,99 @@
   </head>
   <body>
     <main class="main">
-      <div id="cardContainer">
-        <div id="card" class="card rating-card">
+      <h1 class="visually-hidden">Please Rate our Service</h1>
+      <div id="cardContainer"></div>
+
+      <template id="ratingTemplate">
+        <form id="ratingForm" class="card rating-card fade">
           <div class="icon-container">
             <i class="fa-solid fa-star icon-star"></i>
           </div>
           <h2>How did we do?</h2>
-          <form id="ratingForm">
-            <fieldset class="rating-fieldset">
-              <legend class="rating-legend">
-                Please let us know how we did with your support
-                request. All feedback is appreciated to help us
-                improve our offering!
-              </legend>
-              <div class="selector-container">
-                <div class="selector-item stacked">
-                  <input
-                    type="radio"
-                    id="radio1"
-                    name="rating"
-                    value="1" />
-                  <label for="radio1" class="selector-item_label"
-                    >1</label
-                  >
-                </div>
-                <div class="selector-item stacked">
-                  <input
-                    type="radio"
-                    id="radio2"
-                    name="rating"
-                    value="2" />
-                  <label for="radio2" class="selector-item_label"
-                    >2</label
-                  >
-                </div>
-                <div class="selector-item stacked">
-                  <input
-                    type="radio"
-                    id="radio3"
-                    name="rating"
-                    value="3" />
-                  <label for="radio3" class="selector-item_label"
-                    >3</label
-                  >
-                </div>
-                <div class="selector-item stacked">
-                  <input
-                    type="radio"
-                    id="radio4"
-                    name="rating"
-                    value="4" />
-                  <label for="radio4" class="selector-item_label"
-                    >4</label
-                  >
-                </div>
-                <div class="selector-item stacked">
-                  <input
-                    type="radio"
-                    id="radio5"
-                    name="rating"
-                    value="5" />
-                  <label for="radio5" class="selector-item_label"
-                    >5</label
-                  >
-                </div>
+          <fieldset class="rating-fieldset">
+            <legend class="rating-legend">
+              Please let us know how we did with your support request.
+              All feedback is appreciated to help us improve our
+              offering!
+            </legend>
+            <div class="selector-container">
+              <div class="selector-item stacked">
+                <input
+                  type="radio"
+                  id="radio1"
+                  name="rating"
+                  value="1" />
+                <label for="radio1" class="selector-item_label"
+                  >1</label
+                >
               </div>
-            </fieldset>
-            <button type="submit" class="button button-primary">
-              Submit
-            </button>
-          </form>
+              <div class="selector-item stacked">
+                <input
+                  type="radio"
+                  id="radio2"
+                  name="rating"
+                  value="2" />
+                <label for="radio2" class="selector-item_label"
+                  >2</label
+                >
+              </div>
+              <div class="selector-item stacked">
+                <input
+                  type="radio"
+                  id="radio3"
+                  name="rating"
+                  value="3" />
+                <label for="radio3" class="selector-item_label"
+                  >3</label
+                >
+              </div>
+              <div class="selector-item stacked">
+                <input
+                  type="radio"
+                  id="radio4"
+                  name="rating"
+                  value="4" />
+                <label for="radio4" class="selector-item_label"
+                  >4</label
+                >
+              </div>
+              <div class="selector-item stacked">
+                <input
+                  type="radio"
+                  id="radio5"
+                  name="rating"
+                  value="5" />
+                <label for="radio5" class="selector-item_label"
+                  >5</label
+                >
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="button button-primary">
+            Submit
+          </button>
+        </form>
+      </template>
+
+      <template id="confirmationTemplate">
+        <div
+          class="card confirmation-card fade"
+          role="region"
+          aria-live="polite">
+          <img src="./images/illustration-thank-you.svg" alt="" />
+          <p class="rating-summary">
+            You selected
+            <span id="selectedRating"></span> out of 5
+          </p>
+          <h2>Thank you!</h2>
+          <p>
+            We appreciate you taking the time to give a rating. If you
+            ever need more support, don't hesitate to get in touch!
+          </p>
         </div>
-      </div>
+      </template>
     </main>
 
-    <!-- ToDo: update result-card to confirmation-card? -->
-    <template id="confirmationTemplate">
-      <div class="card confirmation-card" role="region" aria-live="polite">
-        <img src="./images/illustration-thank-you.svg" alt="" />
-        <p class="rating-summary">
-          You selected
-          <span id="selectedRating"></span> out of 5
-        </p>
-        <h2>Thank you!</h2>
-        <p>
-          We appreciate you taking the time to give a rating. If you
-          ever need more support, don't hesitate to get in touch!
-        </p>
-      </div>
-    </template>
-
-    <!-- <script src="./js/index.js"></script> -->
     <script src="./js/script.js"></script>
   </body>
 </html>
