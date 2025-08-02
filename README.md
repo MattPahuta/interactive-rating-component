@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-I picked this useful bit of code up from Kevin Powell's excellent YouTube content. It's the first time I've used it in a project and was perfect for stacking my radio input/label pairs.
+I picked up this useful bit of code from Kevin Powell's excellent YouTube content. It's the first time I've used it in a project, and it worked great for stacking my input/label pairs.
 
 July 2025 Updates
 Moving through the Frontend Mentor Accessibility learning path and this is the first project to complete before moving forward. I'd completed this small component project about 2 years prior, so this was a good time to revisit. 
@@ -78,5 +78,6 @@ Moving through the Frontend Mentor Accessibility learning path and this is the f
 
 - Website - [Matt Pahuta](https://www.mattpahuta.com)
 - Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
-- Twitter - [@mattpahuta](https://www.twitter.com/MattPahuta)
+- Bluesky - [@mattpahuta](https://bsky.app/profile/mattpahuta.bsky.social)
+- LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
 
