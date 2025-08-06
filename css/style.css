@@ -18,9 +18,8 @@ Date: August 2023
     --fs-card-heading: 1.75rem;
     --br-soft: 1.875rem;
   }
-  /* primary colors */
   --clr-orange-500: hsl(25, 97%, 53%);
-  /* neutral colors */
+  --clr-alert: hsl(0, 67%, 55%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-black: hsl(0, 0%, 0%);
   --clr-grey-500: hsl(217, 12%, 63%);
@@ -331,6 +330,13 @@ Date: August 2023
   button.button:focus-visible {
     outline: max(2px, 0.15em) solid var(--clr-orange-500);
     outline-offset: max(2px, 0.15em);
+  }
+
+  .alert {
+    margin-block-start: var(--spacing-100);
+    font-size: var(--fs-card-text);
+    align-self: center;
+    color: var(--clr-alert);
   }
 }
 

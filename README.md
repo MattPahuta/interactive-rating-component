@@ -1,6 +1,6 @@
 # Frontend Mentor - Interactive rating component solution
 
-This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -30,7 +30,6 @@ Users should be able to:
 ![Rating Card](./images/project-ss-01.png)
 ![Confirmation Card](./images/project-ss-02.png)
 
-
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/interactive-rating-component-using-css-grid-and-javascript-APQtGNXdeC)
@@ -49,7 +48,8 @@ Users should be able to:
 
 ### What I learned
 
-July 2025 Updates
+**Updated August 2025**
+
 Moving through the Frontend Mentor Accessibility learning path, this is the first project to complete before moving forward. I'd completed this small component project about two years prior, so this was a good time to revisit it and add some small tweaks to my solution:
 
 - Updated some of the styling to better match the design comp
@@ -63,7 +63,7 @@ I picked up this useful bit of code from Kevin Powell's excellent YouTube conten
 ```css
 .stacked {
   display: grid;
-  place-items: center; 
+  place-items: center;
 }
 
 .stacked > * {
@@ -72,9 +72,41 @@ I picked up this useful bit of code from Kevin Powell's excellent YouTube conten
 }
 ```
 
+The bones of the HTML and JavaScript revisions are demonstrated in the code below:
+
+```html
+<template id="confirmationTemplate">
+  <div
+    class="card confirmation-card fade"
+    role="region"
+    aria-live="polite">
+    <img src="./images/illustration-thank-you.svg" alt="" />
+    <p class="rating-summary">
+      You selected
+      <span id="selectedRating"></span> out of 5
+    </p>
+    <h2>Thank you!</h2>
+    <p>
+      We appreciate you taking the time to give a rating. If you ever
+      need more support, don't hesitate to get in touch!
+    </p>
+  </div>
+</template>
+```
+
+```js
+function showConfirmation(rating) {
+  const ratingConfirmation =
+    confirmationTemplate.content.cloneNode(true);
+  ratingConfirmation.querySelector('#selectedRating').textContent =
+    rating;
+  cardContainer.replaceChildren(ratingConfirmation);
+}
+```
+
 ### Useful resources
 
-- [moderncss.dev](https://www.moderncss.dev) - This series by Stephanie Eckles is indispensible when tackling accessibility and style concerns ranging from simple to advanced. I keep coming back to it over and over. For this project, the articles on custom styled radio buttons was particularly useful. 
+- [moderncss.dev](https://www.moderncss.dev) - This series by Stephanie Eckles is indispensible when tackling accessibility and style concerns ranging from simple to advanced. I keep coming back to it over and over. For this project, the articles on custom styled radio buttons was particularly useful.
 
 ## Author
 
@@ -82,4 +114,3 @@ I picked up this useful bit of code from Kevin Powell's excellent YouTube conten
 - Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
 - Bluesky - [@mattpahuta](https://bsky.app/profile/mattpahuta.bsky.social)
 - LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
-
