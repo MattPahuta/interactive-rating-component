@@ -45,18 +45,20 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- JavaScript
 
 ### What I learned
 
-I picked up this useful bit of code from Kevin Powell's excellent YouTube content. It's the first time I've used it in a project, and it worked great for stacking my input/label pairs.
-
 July 2025 Updates
-Moving through the Frontend Mentor Accessibility learning path and this is the first project to complete before moving forward. I'd completed this small component project about 2 years prior, so this was a good time to revisit. 
+Moving through the Frontend Mentor Accessibility learning path, this is the first project to complete before moving forward. I'd completed this small component project about two years prior, so this was a good time to revisit it and add some small tweaks to my solution:
 
-- Updated some of the styling to better match the comp
-- Complete revision of the JavaScript code
-- Use of the `template` element to dynamically render the two screens
-- This is a good use case for a simple React component, but since I'd originally completed with vanilla JS, I wanted to adapt it by tinking with the existing JS...
+- Updated some of the styling to better match the design comp
+- Revised all prior JavaScript code
+- Used the `template` element to dynamically render the two screens
+
+This small project is a good use case for a simple React component, but since I'd originally completed it with vanilla JavaScript, I decided to stick with that approach but alter the method of rendering the two states. I think this is a slightly more modern and performative solution than what I had before.
+
+I picked up this useful bit of code from Kevin Powell's excellent YouTube content. It's the first time I've used it in a project, and it worked great for stacking my input/label pairs.
 
 ```css
 .stacked {
